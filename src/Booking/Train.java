@@ -8,20 +8,29 @@ package Booking;
  *
  * @author CENTIC
  */
-public class Train {
+public class Train extends TransportService{
     private String seatType;
     private int wagonNumber;
     
     public Train(){
+        super.setId(0);
+        super.setOrigin("null");
+        super.setDestination("null");
+        super.setPrice(0.0);
+        this.setSeatType("null");
+        this.setWagonNumber(0);
         
     }
-    public Train (int id, String origin, String destinaton, double price, String seatType, int wagonNumber){
-        
+    public Train (int id, String origin, String destination, double price, String seatType, int wagonNumber){
+        super.setId(wagonNumber);
+        super.setOrigin(origin);
+        super.setDestination(destination);
+        super.setPrice(price);
         this.setSeatType(seatType);
         this.setWagonNumber(wagonNumber);
     }
 
-    public String getSeatType() { //0
+    public String getSeatType() {
         return seatType;
     }
 
@@ -37,16 +46,22 @@ public class Train {
         this.wagonNumber = wagonNumber;
     }
     
-    public String getServiceInformation(){
-        return null;
+    public String getService(){
+        String str = this.getId()+": activate";
+        return str;
     }
     
     public String getLuggageInformation(){
-        return null;
+        String str ="Collect luggage from the train";
+        return str;
     }
     
     @Override
     public String toString(){
-        return null;
+        String str = super.toString();
+        str += "\n Seat Type: "+this.seatType+"\n Wagon Number: "+this.wagonNumber;
+        return str;
     }
+    
+    
 }
