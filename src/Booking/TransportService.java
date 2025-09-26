@@ -1,9 +1,6 @@
 package Booking;
 
-/**
- *
- * @author CENTIC
- */
+
 public abstract class  TransportService {
     private int id;
     private String origin;
@@ -57,7 +54,7 @@ public abstract class  TransportService {
         return str;
     }
     
-    public abstract String getService();
+    public abstract String getServiceInformation();
     public abstract String getLuggageInformation();
     
     
